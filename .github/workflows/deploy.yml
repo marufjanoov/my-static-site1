@@ -1,18 +1,17 @@
-name: Deploy to GitHub Pages
+name: Deploy Static Site
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v2
+      - run: echo "Deploying to GitHub Pages..."
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          branch: main
+          folder: .
