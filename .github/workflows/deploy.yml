@@ -16,8 +16,6 @@ uses: actions/checkout@v4
 uses: actions/setup-node@v4
 with:
 node-version: '18'
-4.3 Создание файла конфигурации для GitHub Pages
-Создайте файл _config.yml в корне проекта:
 cache: 'npm'
 # Шаг 3: Проверка HTML (опционально)
 - name: HTML Validation
